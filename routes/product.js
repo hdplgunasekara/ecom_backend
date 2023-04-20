@@ -5,10 +5,10 @@
 const router = require("express").Router();
 require("dotenv").config();
 const multer = require('multer');
-
+//
 const { storage } = require('../cloudinary');
 const upload = multer({ storage });
-//
+//Import product controller
 const productController = require("../controller/product.js");
 
 //Add product

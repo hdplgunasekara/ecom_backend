@@ -1,12 +1,13 @@
 const cloudinary = require('cloudinary').v2;
 const { CloudinaryStorage } = require('multer-storage-cloudinary');
-
+require('dotenv').config();
+//
 cloudinary.config({
-  cloud_name: "itp2022",
-  api_key: "287411647238895",
-  api_secret: "lmh2OzX88woZSTdtJZ4jWI3ot4Y"
+  cloud_name: process.env.CLOUD_NAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET
 });
-
+//
 const storage = new CloudinaryStorage({
     cloudinary,
     params: {
@@ -14,7 +15,7 @@ const storage = new CloudinaryStorage({
         allowedFormats: ['jpeg', 'png', 'jpg']
     } 
 });
-
+//
 module.exports = {
     cloudinary,
     storage

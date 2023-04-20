@@ -12,7 +12,8 @@ const validateProduct= (data) => {
         product_name: Joi.string().required().label('Product Name'),
         price: Joi.number().required().label('Price'),
         quantity: Joi.number().required().label('Quantity'),
-        product_description: Joi.string().required().label('Product Description'),	
+        product_description: Joi.string().required().label('Product Description'),
+        images: Joi.array().label('Images').optional(),	
 	});
 	return schema.validate(data);
 };
